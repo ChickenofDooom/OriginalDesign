@@ -1,11 +1,27 @@
-void setup()
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OriginalDesign extends PApplet {
+
+public void setup()
 {
   size(400,400);
   background(0,255,255);
   textAlign(CENTER);
   
 }
-void draw(){
+public void draw(){
 	neck();
 	paper();
 	body();
@@ -13,14 +29,14 @@ void draw(){
 	
 }
 
-void neck()
+public void neck()
 {
 fill(255,255,0);
 rect(185,215,30,40);
 
 }
 
-void face()
+public void face()
 {
 fill(255,255,0);
 ellipse(200,175,125,125);
@@ -38,7 +54,7 @@ arc(200,200,80,50,0,PI);
 
 }
 
-void paper(){
+public void paper(){
 fill(255,255,255);
 rect(70,250,60,85);
 fill(255,0,0);
@@ -47,7 +63,7 @@ text("A+",100,300);
 text("Every Lowell Student Ever",200,30);
 }
 
-void body(){
+public void body(){
 fill(255,255,0);
 rect(130,285,50,25);
 rect(230,285,25,70);
@@ -59,7 +75,7 @@ fill(255,0,0);
 text("Move to give him an F",200,350);
 
 }
-void mouseMoved() {
+public void mouseMoved() {
 	fill(0,255,0);
 	rect(0,0,400,400);
 	//necktwo
@@ -105,3 +121,12 @@ void mouseMoved() {
 
 
 
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OriginalDesign" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
