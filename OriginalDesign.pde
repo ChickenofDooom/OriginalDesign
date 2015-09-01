@@ -60,7 +60,7 @@ text("Move to give him an F",200,350);
 
 }
 void mouseMoved() {
-	fill(0,255,0);
+	fill(0,255,255);
 	rect(0,0,400,400);
 	//necktwo
 	fill(255,255,0);
